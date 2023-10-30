@@ -1,5 +1,10 @@
+run: build
+	./bin/app
+
+
 build:
 	go build -o ./bin/app ./cmd/main/main.go 
 
-run: build
-	./bin/app
+
+reload: 
+	./bin/air -c air.toml

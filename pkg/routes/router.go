@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
+	"github.com/ronanzindev/echo-fly.io/pkg/adm"
 )
 
 type TemplateRegistry struct {
@@ -17,6 +18,7 @@ func (t *TemplateRegistry) Render(w io.Writer, name string, data interface{}, c 
 }
 func NewRouter() (e *echo.Echo) {
 	e = echo.New()
+	e.Debug = true
 	e.Renderer = &TemplateRegistry{
 		templates: template.Must(template.ParseGlob("view/*.html")),
 	}
@@ -27,5 +29,7 @@ func NewRouter() (e *echo.Echo) {
 	e.GET("/html", func(c echo.Context) error {
 		return c.Render(http.StatusOK, "index.html", map[string]interface{}{"name": "Gabriel"})
 	})
+	e.GET("/login", adm.AdmPage)
+	e.POST("/login", adm.Login)
 	return
 }
