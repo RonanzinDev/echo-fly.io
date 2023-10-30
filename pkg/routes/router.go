@@ -7,6 +7,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/ronanzindev/echo-fly.io/pkg/adm"
+	"github.com/ronanzindev/echo-fly.io/pkg/user"
 )
 
 type TemplateRegistry struct {
@@ -31,5 +32,6 @@ func NewRouter() (e *echo.Echo) {
 	})
 	e.GET("/login", adm.AdmPage)
 	e.POST("/login", adm.Login)
+	e.GET("/users", user.GetUsers)
 	return
 }
