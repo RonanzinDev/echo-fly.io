@@ -1,3 +1,9 @@
 [build]
-cmd = "go build ./cmd/main/main.go -o ./bin/app"
+cmd = "go build -o ./bin/app ./cmd/main/main.go"
 bin = "./bin/app"
+exclude_dir = ["frontend/node_modules"]
+
+
+[misc]
+# Delete tmp directory on exit
+clean_on_exit = true

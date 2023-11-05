@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.login {
+    padding: 20px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .login {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+p {
+    margin: 10px 0;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: #007BFF;
+    color: black;
+}
+
+.button {
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    height: 10px;
+}
+
+@media (min-width: 768px) {
+    button {
+        display: inline-block;
+    }
+}
+
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+
+.btn {
+    cursor: pointer;
+    display: block;
+    width: 100px;
+    height: 40px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
+.add-user-btn {
+    position: relative;
+    left: 92%;
+  
+}
